@@ -1,0 +1,68 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, i, j, k, spatii, caracter = 1, copiespatii, copiecaracter = 1;
+    char c;
+    
+    cin >> n >> c;
+    
+    spatii = n - 1;
+    copiespatii = spatii;
+    
+    for(i = 1; i <= n; i++)
+    {
+        while(spatii > 0)
+        {
+            cout << " ";
+            spatii --;
+        }
+        
+        while(caracter > 0)
+        {
+            cout << c;
+            caracter --;
+        }
+        
+        copiespatii --;
+        spatii = copiespatii;
+        
+        copiecaracter++;
+        caracter = copiecaracter;
+        
+        cout << '\n';
+    }
+    
+    caracter = n - 1;
+    spatii = 1;
+    copiespatii = spatii;
+    copiecaracter = caracter;
+    
+    for(i = 1; i <= n; i++)
+    {
+        cout << c;
+    }
+    
+    cout << '\n';
+    
+    for(i = 1; i <= n; i++)
+    {
+        while(caracter > 0)
+        {
+            cout << c;
+            caracter --;
+        }
+        
+        copiecaracter --;
+        caracter = copiecaracter;
+        
+        if(i != n)
+        {
+        cout << '\n';
+        }
+    }
+
+    return 0;
+}
